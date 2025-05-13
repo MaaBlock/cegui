@@ -30,7 +30,6 @@
 
 #include <cstring>
 
-
 // Start of CEGUI namespace section
 namespace CEGUI
 {

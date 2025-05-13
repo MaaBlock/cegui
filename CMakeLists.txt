@@ -1,7 +1,7 @@
 ################################################################################
 # Top-level CMakeLists.txt file for Crazy Eddie's GUI System
 ################################################################################
-cmake_minimum_required(VERSION 3.1)
+#cmake_minimum_required(VERSION 3.1)
 
 if (APPLE AND NOT CMAKE_OSX_ARCHITECTURES)
     set( CMAKE_OSX_ARCHITECTURES ${CMAKE_HOST_SYSTEM_PROCESSOR} CACHE STRING "Build architectures for Mac OS X")
@@ -16,6 +16,8 @@ endif()
 # Start of main Project definitions
 ################################################################################
 project(cegui)
+
+#add_subdirectory(dependencies)
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 include(CEGUIMacros)
@@ -87,7 +89,7 @@ set (GTK2_INCLUDE_DIR ${GTK2_INCLUDE_DIRS})
 # Look for packages
 find_package(PCRE)
 find_package(Freetype)
-find_package(Minizip)
+find_package(unofficial-minizip CONFIG REQUIRED)
 find_package(Fribidi)
 find_package(Raqm)
 
@@ -110,7 +112,7 @@ endif()
 set( SFML_FIND_REQUIRED FALSE )
 find_package(SFML 2.3 COMPONENTS ${CEGUI_SFML_COMPONENTS})
 
-find_package(DirectXSDK)
+find_package(DirectXSDK REQUIRED)
 find_package(Irrlicht)
 
 find_package(OGRE CONFIG)
@@ -168,8 +170,8 @@ if (UNIX AND PYTHON_VERSION_FOUND)
 else()
   find_package(PythonLibs)
 endif()
-find_package(Boost 1.36.0 COMPONENTS python unit_test_framework system timer)
-find_package(SWIG 3.0.8)
+find_package(Boost REQUIRED)
+find_package(SWIG)
 
 find_package(Doxygen)
 

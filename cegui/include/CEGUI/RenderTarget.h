@@ -55,8 +55,8 @@ public:
 \brief
     Defines a virtual RenderTarget class serving different render target classes
     as base. Concrete instances of objects that implement the RenderTarget interface are
-    normally created via the Renderer object. This class should be inherited
-    only using virtual inheritance.
+    normally created via the Renderer object.
+    这个类只能通过虚继承来继承
 */
 class CEGUIEXPORT RenderTarget :
     public EventSet

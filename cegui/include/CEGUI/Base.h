@@ -98,7 +98,7 @@
 #   define  CEGUI_FUNCTION_NAME CEGUI::String("[Function name unavailable]")
 #endif
 
-//! Prevent an "unused parameter/variable" warning.
+//! 预防 未使用的变量/参数 警告
 #define CEGUI_UNUSED(var) (static_cast<void>(var))
 
 /*************************************************************************
